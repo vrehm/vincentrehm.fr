@@ -86,7 +86,7 @@
       <div
         v-show="mobileNavOpen"
         v-click-outside="closeMobileNavbar"
-        class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50"
       >
         <div class="rounded-lg shadow-md">
           <div
