@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative bg-white overflow-x-hidden">
+    <div class="relative bg-white overflow-hidden">
       <!-- Background Patterns -->
       <home-background-patterns />
 
