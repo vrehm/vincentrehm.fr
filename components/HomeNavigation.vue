@@ -5,9 +5,7 @@
     >
       <div class="flex items-center flex-1">
         <div class="flex items-center justify-between w-full md:w-auto">
-          <nuxt-link to="/" aria-label="Home">
-            <img class="h-20 w-auto sm:h-24" src="/logo.png" alt="Logo" />
-          </nuxt-link>
+          <the-logo />
 
           <div
             class="-mr-2 flex items-center md:hidden"
@@ -42,7 +40,7 @@
           <nuxt-link
             v-for="(link, index) in links"
             :key="link.id"
-            :to="link.uri"
+            :to="{ path: link.path, hash: link.hash }"
             :class="{ 'ml-10': index !== 0 }"
             class="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
             >{{ link.name }}</nuxt-link
@@ -86,7 +84,7 @@
       <div
         v-show="mobileNavOpen"
         v-click-outside="closeMobileNavbar"
-        class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50"
+        class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
       >
         <div class="rounded-lg shadow-md">
           <div
@@ -129,7 +127,7 @@
               <nuxt-link
                 v-for="(link, index) in links"
                 :key="link.id"
-                :to="link.uri"
+                :to="{ path: link.path, hash: link.hash }"
                 :class="{ 'mt-1': index !== 0 }"
                 class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
                 role="menuitem"
@@ -158,10 +156,10 @@ export default {
   data() {
     return {
       links: [
-        { name: 'Compétences', uri: 'competences' },
-        { name: 'Références', uri: 'references' },
-        { name: 'Réseaux', uri: 'reseaux' },
-        { name: 'Blog', uri: 'blog' },
+        { name: 'Compétences', path: '/', hash: 'competences' },
+        { name: 'Références', path: '/', hash: 'references' },
+        { name: 'Réseaux', path: '/', hash: 'reseaux' },
+        { name: 'Blog', path: '/', hash: 'blog' },
       ],
       cta: 'Contact',
       routeChange: false,
